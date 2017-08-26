@@ -1,0 +1,87 @@
+<div align="center" ><h1><b>Assignment 1</b></h1></div>
+
+<p><h4><b>1. Read the following article http://martinfowler.com/articles/microservices.html and explain what "Microservices Architecture" means.</b></h4></p>
+<p> En base a lo que entendí en el artículo, la arquitectura de microservicios te permite desarrollar una aplicación como un conjunto de servicios y cada servicio corre dentro de su propio proceso comunicándose con RESTful Api, lo que te permite escribir código en diferentes lenguajes y sin tener ningún conflicto en la comunicación. Una ventaja de microservicios en comparación a una arquitectura monolítica es que se pueden hacer cambios en la aplicación sin tener que reconstruir toda la arquitectura gracias a que cada funcionalidad está separado en distintos servicios. En las características, se me hizo interesante saber que en la arquitectura de microservicios es preferible separar todo en servicios como se mencionó anteriormente en lugar de utilizar librerías, lo cual se comunican a través de servicio web y que son “deployed” de manera independiente sin tener que estar vinculados al programa. La arquitectura microservicios es escalable y te permite tener todo automatizado, por lo tanto, lo veo como la arquitectura del “futuro” en el mundo del software y colocó futuro entre comillas debido a que en el mundo de la tecnología todo puede cambiar muy rápido.</p>
+
+<p><h4><b>2. Create a bash file to setup a complete environment for this class.</b></h4></p>
+<pre><xmp>#!/bin/bash
+
+echo "Installing awscli..."
+sudo apt-get install awscli
+
+echo "Installing grunt..."
+sudo apt-get install -g grunt-cli
+
+echo "Installing gulp..."
+sudo apt-get install gulp
+
+echo "Installing nodejs..."
+sudo apt-get install nodejs
+
+echo "Installing yeoman..."
+sudo apt-get install -g yo
+
+echo "Setup complete"
+</xmp></pre>
+
+<p><h4><b>3. Create a grunt task to deploy your website to your own bucket in S3. </b></h4></p>
+<pre><xmp>#!/bin/bash
+BUCKET = $1
+
+echo "Deleting bucket $BUCKET..."
+aws s3 rm s3://$BUCKET --recursive
+aws s3api delete-bucket --bucket $BUCKET
+
+echo "Creating bucket $BUCKET..."
+aws s3api create-bucket --bucket $BUCKET
+
+echo "Creating website folders..."
+cd ~
+mkdir Proyects
+cd Proyects
+mkdir $BUCKET
+cd $BUCKET
+yo angular $BUCKET
+cd dist
+
+echo "Executing grunt build..."
+grunt build
+
+echo "Synching bucket"
+aws s3 sync . s3://$BUCKET --acl public-read
+
+echo "Creating website"
+aws s3api put-bucket-website --bucket $BUCKET --website-configuration
+
+echo "Website Deployed!"
+</xmp></pre>
+
+<p><h4><b>4. Explain how routes work in angular and a code example </b></h4></p>
+<p>Cuando en tu aplicación quieres navegar en distintas páginas, pero quieres que se vea como una sola página dentro de tu aplicación sin tener que recargar la página.</p>
+<pre><xmp>
+    <div ng-controller = ”MainController”>
+               Choose:
+               <a hred=”Book/Moby”>Moby</a> |
+               <a hred=”Book/Gatsby”>Gatsby</a> |
+               <a hred=”Book/Scarlet”>Scarlet</a>
+               <div ng-view></div>
+               <hr />
+               <pre>$location.path() = {{$location.path()}}</pre>
+<pre>$route.current.templateUrl = {{$route.current.templateUrl }}</pre>
+<pre>$route.current.params = {{$route.current.params}}</pre>
+<pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+<pre>$routeParams = {{$routeParams}}</pre>
+</div>
+</xmp></pre>
+<p>Ejemplo de código recuperado de: https://docs.angularjs.org/api/ngRoute/service/$route</p>
+
+<p><h4><b>5. Explain how you can have more than one access key in your computer and how to use each one. Provide code or configuration examples. </b></h4></p>
+<p> Puedes tener más de un Access key para reducir cualquier tipo de riesgo. Un Access key no tiene fecha de expiración hasta que uno manualmente lo elimine. Pero se pueden crear “Temporary Security Tokens” que consisten en un Access key ID y un Access key secreto lo cual tiene una fecha de expiración más corta, de esta manera los puedes cambiar constantemente por seguridad.</p>
+<p>Ejemplo:</p>
+<pre><xmp>aws iam list-access-keys –user-name Fidel
+aws iam update-access-key –access-key-id AKIAI44JDNJASDNJAD – status Inactive –user-name Fidel
+</xmp></pre>
+<p>https://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/</p>
+<p>http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</p>
+<p><h4><b>6. Explain what are you going to do different this semester based on last semester experience</b></h4></p>
+<p>Leer más sobre los temas vistos en clase, realizar las tareas y actividades con más tiempo de anticipación y trabajar más duro.</p>

@@ -1,0 +1,149 @@
+<div align="center" ><h1><b>Assignment 2</b></h1></div>
+
+<p><h4><b>1. Explain what CloudFormation is and write a yaml file to create a bucket using CloudFormation.</b></h4></p>
+<p>Es una manera más sencilla de crear y administrar la infraestructura que requiere una aplicación en aws. Existen “sample templates” para describir los recursos de aws y los parámetros de ejecución para correr la aplicación. Se puede implementar y actualizar una plantilla y mediante AWS Management Console, AWS Command Line Interface o API</p>
+<p>YAML File:</p>
+<pre><xmp>Type: "AWS::S3::Bucket"
+Properties:
+    AccessControl: PublicRead
+    BucketName: fidelfcastro
+    WebsiteConfiguration:
+ErrorDocument: 404.html
+IndexDocument: index.html</xmp></pre>
+
+<p><h4><b>2. Create a Hello World in NodeJs and create a tutorial about it.</b></h4></p>
+<p>Tutorial:</p>
+<p>1.- Crear un archivo en el destino que gustes donde se guardará tu script</p>
+<p>2.- Abrir un editor de texto como por ejemplo, Sublime Text</p>
+<p>3.- Crear “Hello World” en nodejs: console.log(‘Hello World’)</p>
+<p>4.- Salvar script como .js y guardarlo en el archivo creado anteriormente</p>
+<p>5.- Desde la terminal ingresar a la ruta donde esta ubicado tu script</p>
+<p>6.- Ingresar nodejs scriptName</p>
+<p>7.- Resultado: Hello World</p>
+
+<pre><xmp>console.log(‘Hello World’);</xmp></pre>
+
+<p><h4><b>3. Install the aws sdk for nodejs and create a tutorial about it.</b></h4></p>
+<p>aws sdk para node js se instala con npm porque es un manejador de paquetes de node js y instala los paquetes que desea utilizar y proporciona una interfaz útil para trabajar con ellos, por lo tanto es importante instalar primero nodejs y npm. </p>
+<p><b>Tutorial de instalación:</b></p>
+<p>1.- Hacer un update para actualizar la última versión de los paquetes:</p>
+<pre><xmp>sudo apt-get update</xmp></pre>
+<p>2.- Instalar nodejs:</p>
+<pre><xmp>sudo apt-get install nodejs</xmp></pre>
+<p>3.- Instalar npm:</p>
+<pre><xmp>sudo apt-get install npm</xmp></pre>
+<p>4.- Instalar aws-sdk para node js</p>
+<pre><xmp>sudo npm install aws-sdk</xmp></pre>
+<p><h4><b>4. Create a code in NodeJs that will tell you the version/date of your website in S3. </b></h4></p>
+
+
+<p><h4><b>5. Read and explain the post about Microservices Trade-Offs by Martin Fowler (http://martinfowler.com/articles/microservice-trade-offs.html).</b></h4></p>
+<p>En el artículo de Martin Fowler explica que aunque la arquitectura de microservicios pueda ser un mejor acercamiento en comparación a una arquitectura monolítica, también puede llegar a afectar la productividad, por lo tanto explica que existen ventajas y desventajas en dicha arquitectura como en todo tipo de arquitecturas.
+
+    Como ventajas, se explica que se pueden dividir en módulos el software, lo cual ayuda para equipos grandes ya que si quieres cambiar alguna parte de tu sistema solo necesitas cambiar una pequeña parte del sistema sin afectar lo demás. También facilita el “deployment” ya que gracias a esta arquitectura se pueden hacer muchos “deployments” al dia. Otra de las ventajas es que se pueden utilizar diferentes lenguajes de programación gracias a que está todo separado en módulos.
+
+    Como desventajas se tienen los sistemas distribuidos, ya que las llamadas remotas son más lentas y esto causa que estén en riesgo de fallar. Otra desventaja es que se necesita un buen equipo de operaciones para poder administrar múltiples servicios, los cuales son reasignados regularmente.
+</p>
+<p><h4><b>6. Create a comparison table between AWS, Azure and Google Cloud.</b></h4></p>
+<p></p>
+<body>
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<table style="width:100%">
+    <tr>
+        <th></th>
+        <th><b>AWS</b></th>
+        <th><b>Azure</b></th>
+        <th><b>Google Cloud</b></th>
+    </tr>
+    <tr>
+        <td><b>Computo</b></td>
+        <td>EC2 (Elastic Compute Cloud)</td>
+        <td>Virtual Machines, Virtual Machines Scale Sets</td>
+        <td>GCE (Google Compute Engine)</td>
+
+    </tr>
+    <tr>
+        <td><b>Storage</b></td>
+        <td>Amazon s3</td>
+        <td>Microsoft Azure Storage</td>
+        <td>Google Cloud Storage</td>
+
+    </tr>
+    <tr>
+        <td><b>Locations</b></td>
+        <td>42 availability zones</td>
+        <td>32 regions</td>
+        <td>33 countries</td>
+    </tr>
+    <tr>
+        <td><b>Databases</b></td>
+        <td>Relational Database Services </td>
+        <td>Azure SQL</td>
+        <td>Cloud SQL</td>
+    </tr>
+    <tr>
+        <td><b>Serverless Computing</b></td>
+        <td>AWS Lambda</td>
+        <td>Azure Functions</td>
+        <td>Google Cloud Functions</td>
+    </tr>
+    <tr>
+        <td><b>API Management</b></td>
+        <td>Amazon API Gateway</td>
+        <td>Azure Api Management</td>
+        <td>Cloud Endpoints</td>
+    </tr>
+    <tr>
+        <td><b>Networking</b></td>
+        <td>Amazon Route 53</td>
+        <td>Azure DNS, Azure Traffic Manager</td>
+        <td>Cloud DNS</td>
+    </tr>
+    <tr>
+        <td><b>Machine Learning</b></td>
+        <td>Amazon Machine Learning</td>
+        <td>Azure Machine Learning</td>
+        <td>Cloud Machine Learning Engine</td>
+    </tr>
+    <tr>
+        <td><b>Container Support</b></td>
+        <td>EC2 Container Service</td>
+        <td>Docker Virtual Machine Extension</td>
+        <td>Container Engine, Container Registry</td>
+    </tr>
+    <tr>
+        <td><b>Backup Options</b></td>
+        <td>Amazon Glacier</td>
+        <td>Azure Backup</td>
+        <td>Google Cloud Storage</td>
+    </tr>
+</table>
+
+</body>
+<p></p>
+
+
+<p><h4><b> 7. Read at least 5 sections of Seth Godin’s Manifesto: “Stop Stealing Dreams” and tell me what you think about it.</b></h4></p>
+<p><b>Back to (the wrong) school</b></p>
+<p>En este manifiesto estoy de acuerdo y en desacuerdo con lo que dice Seth Godin’s. Si creo que en muchas escuelas nos entrenan a tomar órdenes y lograr hacer lo que se nos pide, y más que nada en los principios de nuestra educación como en la primaria, hasta el punto que nos acostumbramos a acatar órdenes y eso puede entumecer nuestra creatividad.
+    Pero la razón que también estoy un poco en desacuerdo, es que no creo que sea 100% culpa de la escuela. Tiene que ver mucho la educación que recibes en tu hogar. Es muy diferente que en tu casa te pongan a ver la tele todo el dia a que te pongan a leer libros y realizar actividades que te ayudan a tu creatividad.
+</p>
+<p></p>
+<p><b>What is school for?</b></p>
+<p>En este manifiesto opino casi lo mismo que el manifiesto pasado. Si opino lo mismo que el autor pero no en tan grandes rasgos. Si creo que escuelas pueden tender a matar tu creatividad, pero tampoco creo que la escuela sea tan mala en ese sentido ya que hay casos donde gente si sale adelante y logra grandes cosas en la vida gracias a la educación que recibieron, pero como mencione anteriormente, también tiene mucho que ver con la persistencia de cada persona para superarse y crear cosas nuevas y esto viene mucho también de tu educación fuera de la escuela.</p>
+<p></p>
+<p><b>Column A and Column B</b></p>
+<p>Esta analogía entre las dos columnas me gusto. Y lo hace en muestra de lo que al final del dia te enseñan en la escuela (Columna B) y lo que te deberían de enseñar (Columna A). Tendríamos un mejor futuro como generación si tuviéramos las cualidades de la Columna A, ya que podríamos cuestionar las cosas e intentar de siempre hacer algo mejor en lugar de nada más obedecer a algún superior.</p>
+<p></p>
+<p><b>Changing what we get, because we’ve changed what we need</b></p>
+<p>Si creo que las escuelas tienen que ir cambiando la educación que imparten en paralelo a la evolución de la sociedad y no solamente mejorar lo que ya tienen. Lo importante es cambiar para mejor.</p>
+<p></p>
+<p><b>Is it possible to teach attitudes?</b></p>
+<p>El autor menciona en este manifiesto la importancia de enseñar a los demás tener buena actitud y tener compromisos y vencer tus miedos entre muchas otras cosas pero en lugar de eso las escuelas están enseñando a quitarte la valentía y la creatividad. Lo cual estoy de acuerdo pero como mencione anteriormente creo que esto pasa mas en el nivel educativo de la primaria, la cual puede ser la más importante porque es la que te empieza a definir como persona.</p>
