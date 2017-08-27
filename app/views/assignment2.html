@@ -35,6 +35,26 @@ IndexDocument: index.html</xmp></pre>
 <p>4.- Instalar aws-sdk para node js</p>
 <pre><xmp>sudo npm install aws-sdk</xmp></pre>
 <p><h4><b>4. Create a code in NodeJs that will tell you the version/date of your website in S3. </b></h4></p>
+<p><u>Jesus Chaidez (el chuy) me ayudo con este problema.</u></p>
+<pre><xmp>var AWS = require('aws-sdk');
+
+var s3 = new AWS.S3();
+
+var params = {
+	Bucket: "fidelfcastro",
+	Key: "index.html"
+	};
+
+console.log(params);
+s3.getObject(params, function(error, data) {
+	if(error)
+		console.log(error, error.stack);
+	else
+		console.log(data);
+
+
+});</xmp></pre>
+
 
 
 <p><h4><b>5. Read and explain the post about Microservices Trade-Offs by Martin Fowler (http://martinfowler.com/articles/microservice-trade-offs.html).</b></h4></p>
