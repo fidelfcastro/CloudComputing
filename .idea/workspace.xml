@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="adab7608-3c34-4fb9-944c-243464b4e3b6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/chart.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/assignments.html" afterPath="$PROJECT_DIR$/app/views/assignments.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,18 +19,18 @@
       <file leaf-file-name="assignment2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/assignment2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1062">
-              <caret line="59" column="31" lean-forward="false" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+            <state relative-caret-position="162">
+              <caret line="67" column="7" lean-forward="true" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="assignment3.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="assignment3.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/assignment3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="72" column="104" lean-forward="false" selection-start-line="72" selection-start-column="104" selection-end-line="72" selection-end-column="104" />
+            <state relative-caret-position="108">
+              <caret line="46" column="38" lean-forward="false" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
               <folding>
                 <element signature="e#146#152#0" expanded="true" />
                 <element signature="e#152#158#0" expanded="true" />
@@ -83,7 +79,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="assignments.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="assignments.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/assignments.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
@@ -236,12 +232,12 @@
       <workItem from="1503794639999" duration="876000" />
       <workItem from="1504063413897" duration="49000" />
       <workItem from="1504894624828" duration="4381000" />
-      <workItem from="1504941626020" duration="1046000" />
+      <workItem from="1504941626020" duration="1654000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9344000" />
+    <option name="totallyTimeSpent" value="9952000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="292" y="44" width="1857" height="962" extended-state="6" />
@@ -418,22 +414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/assignments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/assignment2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="59" column="31" lean-forward="false" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/chart.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -466,10 +446,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/assignment2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="67" column="7" lean-forward="true" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/assignment3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="72" column="104" lean-forward="false" selection-start-line="72" selection-start-column="104" selection-end-line="72" selection-end-column="104" />
+        <state relative-caret-position="108">
+          <caret line="46" column="38" lean-forward="false" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
           <folding>
             <element signature="e#146#152#0" expanded="true" />
             <element signature="e#152#158#0" expanded="true" />
@@ -484,6 +472,14 @@
             <element signature="e#1400#1406#0" expanded="true" />
             <element signature="e#1406#1412#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/assignments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
