@@ -1,0 +1,98 @@
+<div align="center" ><h1><b>Assignment 3</b></h1></div>
+
+<p><h4><b>1. Create a NodeJS script that will do the following:</b></h4></p>
+<p><h4><b>  &emsp;&emsp; • Download the image from s3://cc414-images/scientist.png.</b></h4></p>
+<p><h4><b>  &emsp;&emsp; • Check if the metadata key “x-amz-meta-move” of the image is true.</b></h4></p>
+<p><h4><b>  &emsp;&emsp; • If true, upload the image to s3://cc414-images/{MATRICULA}/image.png</b></h4></p>
+
+
+<pre><xmp>const aws = require('aws-sdk');
+const s3 = new aws.S3();
+
+var getParams = {
+    Bucket: 'cc414-images',
+    Key: 'scientist.png'
+}
+
+s3.getObject(getParams, function(err, data) {
+    if (err){
+        console.log(err);
+        return err;
+    }
+
+    if(data.Metadata) {
+        var putParams = {
+            Bucket: 'cc414-images',
+            Key: '23102/image.png',
+            Body: data.Body
+        }
+
+        s3.putObject(putParams, function(err, res) {
+            if(err){
+                console.log(err);
+                return err;
+            }
+            else {
+                console.log("Succesfuly uploaded image");
+            }
+        });
+    }
+
+
+
+
+});
+</xmp></pre>
+
+<p><h4><b>2. Create a NodeJS script that will do the following:</b></h4></p>
+<p><h4><b> &emsp;&emsp; • Will get the Nasa Astronomy Picture of the day.</b></h4></p>
+<p><h4><b> &emsp;&emsp; • Save the image in the local file system.</b></h4></p>
+<p><h4><b> &emsp;&emsp; • Print the title of the image</b></h4></p>
+
+<p>Instalar node nasa pic of the day</p>
+<pre><xmp>sudp npm install node-nasa-pic-of-day --save</xmp></pre>
+
+<p>Node Js Script</p>
+<pre><xmp>'use strict'
+const apod = require('node-nasa-pic-of-day');
+
+apod = new apod({
+    Key: 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY',
+    Date: today
+});
+
+apod.getAllData(function(body) {
+    console.log(body.Title);
+});
+</xmp></pre>
+
+<p>Referencia: https://www.npmjs.com/package/node-nasa-pic-of-day</p>
+
+<p><h4><b>3. Implement Google Analytics in your personal web site (All teams will do the same for their Final Project).</b></h4></p>
+<p></p>
+<p>Cree una cuenta en Google Analytics, despues registre mi pagina y me genero un Tracking Id y lo pegue dentro del script the Google Analytics en el comando ga() en Index.html de la siguiente manera:</p>
+<pre><xmp>
+       ga('create', 'UA-106123131-1');
+       ga('send', 'pageview');
+</xmp></pre>
+
+<p><h4><b>4. Read and explain the following article by Martin Fowler: http://martinfowler.com/ articles/richardsonMaturityModel.html.</b></h4></p>
+<p></p>
+<p>Explica muy claramente el modelo que divide en 3 niveles principales el recurso de REST. Estos niveles proporcionan un claro entendimiento para entender cómo funciona realmente REST y poder entender los conceptos básicos.</p>
+
+<p>Antes de los 3 niveles menciona un nivel 0 como el punto de partida cuando quieres crear un modelo utilizando HTTP, donde se utiliza HTTP como un mecanismo de tunelización para su mecanismo de interacción remota basado en “Remote Procedure Invocation”. Al final, un escenario de nivel 0 es como una simple conversación de ida y vuelta.</p>
+
+<p>El nivel 1 es cuando se introducen los recursos, que a diferencia del nivel 0, en lugar de hacer todas las solicitudes a un “endpoint” de servicio singular, ahora se empiezan a utilizar recursos, lo cual ayuda controlar la dificultad separando un gran extremo del servicio en múltiples recursos.</p>
+
+<p>El nivel 2 habla de los verbos de HTTP como por ejemplo GET, POST y PUT. El nivel 2 se aleja de los mecanismos del nivel 0 y 1 ya que no utiliza el mecanismo de tunelizacion que permite la interacción con HTTP. Con HTTPverbs se eliminan variaciones innecesarios.</p>
+
+<p>Y por último el nivel 3 habla de point of hypermedia, este nivel en lo personal me costó un poco más de entender, pero en base a lo que lei puedo decir que ayuda hacer un protocolo más autodocumentado ya que ayuda a los desarrolladores de clientes a explorar el protocolo y también el punto del nivel 3 es que nos dice lo que podemos realizar a continuación.</p>
+
+<p><h4><b>5. Explain why cloud computing is important. </b></h4></p>
+<p></p>
+<p>Cloud computing es importante porque proporciona grandes cantidades de storage con respecto al costo, se puede acceder a una aplicación en la nube prácticamente desde cualquier parte del mundo y desde cualquier dispositivo, proporciona seguridad y automatización, todo es más rápido y tus datos no se pueden perder mientras no se caiga la nube.
+    Estas son pocas ventajas de muchas por la cual Cloud Computing te puede facilitar la vida como usuario y como profesional.
+</p>
+<p><h4><b>6. Create a comparison table between AWS, Azure and Google Cloud.</b></h4></p>
+<p></p>
+<p>Honestamente, no cambiaría nada. Me gusta mucho los temas vistos en clase y cómo se imparte. Ami me sirve ver lo practico y después repasar paso por paso que es lo que estamos haciendo y cómo funciona. También me agrada mucho la nueva dinámica de las clases de 30 minutos al final. </p>
