@@ -15,7 +15,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+      'ngMd5'
+
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -53,6 +55,11 @@ angular
         templateUrl: 'views/assignment3.html',
         controller: 'Assignment3Ctrl',
         controllerAs: 'assignment3'
+      })
+      .when('/assignment4', {
+        templateUrl: 'views/assignment4.html',
+        controller: 'Assignment4Ctrl',
+        controllerAs: 'assignment4'
       })
       .otherwise({
         redirectTo: '/'

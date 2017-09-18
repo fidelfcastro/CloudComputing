@@ -49,24 +49,6 @@ s3.getObject(getParams, function(err, data) {
 <p><h4><b> &emsp;&emsp; • Save the image in the local file system.</b></h4></p>
 <p><h4><b> &emsp;&emsp; • Print the title of the image</b></h4></p>
 
-<p>Instalar node nasa pic of the day</p>
-<pre><xmp>sudp npm install node-nasa-pic-of-day --save</xmp></pre>
-
-<p>Node Js Script</p>
-<pre><xmp>'use strict'
-const apod = require('node-nasa-pic-of-day');
-
-apod = new apod({
-    Key: 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY',
-    Date: today
-});
-
-apod.getAllData(function(body) {
-    console.log(body.Title);
-});
-</xmp></pre>
-
-<p>Referencia: https://www.npmjs.com/package/node-nasa-pic-of-day</p>
 
 <p><h4><b>3. Implement Google Analytics in your personal web site (All teams will do the same for their Final Project).</b></h4></p>
 <p></p>
