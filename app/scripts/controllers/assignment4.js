@@ -21,6 +21,7 @@ angular.module('otroFidelApp')
       var privateKey = 'b9ba3729edaf63db911bced03dca632d152ac7b8';
       var apiKey = 'c6ee7f48f9b3169a24bb4114d98a3fff';
       var ts = new Date();
+      var exit = false;
       var hash = md5.createHash(ts + privateKey + apiKey);
       while (offset <= superLimit) {
           var url = "https://gateway.marvel.com:443/v1/public/characters?ts=" + ts + "&apikey=" + apiKey + "&hash=" + hash + "&limit=" + limit + "&offset=" + offset;
@@ -37,7 +38,11 @@ angular.module('otroFidelApp')
               })
               .catch(function (data) {
                   console.log('Error. ' + data);
+                  exit = true;
               });
+          if(exit){
+              break;
+          }
 
           offset += 100;
 
