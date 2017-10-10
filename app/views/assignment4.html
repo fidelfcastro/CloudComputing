@@ -1,24 +1,43 @@
 <div align="center" ><h1><b>Assignment 4</b></h1></div>
 
 
-<p><a href="https://github.com/fidelfcastro/CloudComputing">URL GitHub </a></p>
+<p><a href="https://github.com/fidelfcastro/CloudComputing">URL Front End </a></p>
+<p><a href="https://github.com/fidelfcastro/Serverless">URL Lambdas </a></p>
 
-<p><u>Trabajo colaborativo con Miguel Martinez para popular los "Drop Downs" con los personajes (Me ayudo)</u></p>
+<p><u>Miguel Martinez me ayudo con Angular y Chuy me ayudo con el API Gateway</u></p>
 
 
 <div>
     Character 1:
-    <select ng-model="selectedName" ng-options="x for x in charactersName">
+    <select ng-model="selectedName" ng-options="x for x in charactersName |orderBy">
     </select>
     <br>
+    <p></p>
     Character 2:
-    <select ng-model="selectedName2" ng-options="x for x in charactersName">
+    <select ng-model="selectedName2" ng-options="x for x in charactersName |orderBy">
     </select>
     <br>
+    <p></p>
+
+</div>
+<button ng-click="go()">FILTER</button>
+
+<div class="row">
+    <div class="column" style="text-align: center">
+        <p><b>COMICS</b></p>
+        <b>{{loadingComic}}</b>
+        <div ng-repeat="comic in comics track by $index">{{comic}}</div>
+
+    </div>
+    <div class="column" style="text-align: center">
+        <p><b>SERIES</b></p>
+        <b>{{loadingSeries}}</b>
+        <div ng-repeat="serie in series track by $index">{{serie}}</div>
+    </div>
 
 </div>
 
-<input type button ng-click="go()">Go</inputbutton>
+
 
 
 <p><h4><b>Que es una Promesa:</b></h4></p>
