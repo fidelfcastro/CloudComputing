@@ -65,11 +65,11 @@ angular.module('otroFidelApp')
               console.log(secondId);
 
               var reqComics = {
-                  method: 'POST',
+                  method: 'PUT',
                   url: 'https://uz2jpf4798.execute-api.us-east-1.amazonaws.com/MarvelStage/filter/comics',
-                  // headers: {
-                  //     'X-API-KEY': ''
-                  // },
+                  headers: {
+                      'X-API-KEY': 'VNwdTVTftTaCZTLtBU9rg3VqyHRdfPdo9SAz2kt0'
+                  },
 
                   data: {"firstCharacterId": firstId, "secondCharacterId": secondId}
               };
@@ -89,11 +89,11 @@ angular.module('otroFidelApp')
               });
 
               var reqSeries = {
-                  method: 'POST',
+                  method: 'PUT',
                   url: 'https://uz2jpf4798.execute-api.us-east-1.amazonaws.com/MarvelStage/filter/series',
-                  // headers: {
-                  //     'X-API-KEY': ''
-                  // },
+                  headers: {
+                      'X-API-KEY': 'VNwdTVTftTaCZTLtBU9rg3VqyHRdfPdo9SAz2kt0'
+                  },
 
                   data: {"firstCharacterId": firstId, "secondCharacterId": secondId}
               };
