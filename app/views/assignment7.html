@@ -1,0 +1,45 @@
+<div align="center" ><h1><b>Assignment 7</b></h1></div>
+<div class="jumbotron">
+    <p><font size="5"><li><a href="#!/assignment4">Pagina de la tarea de Marvel</a> </li></font></p>
+<p><font size="5"><li><a href="https://github.com/fidelfcastro/Serverless">Codigo de mis lambdas de getComics y getSeries</a> </li></font></p>
+</div>
+
+<p>Logica implementada en mis Lambdas</p>
+<pre><xmp>
+        var getParams = {
+            Bucket: 'fidel-assignment7-bucket',
+            Key: key
+        };
+        var putParams = {
+            Bucket: 'fidel-assignment7-bucket',
+            Key: key,
+            ACL: "public-read",
+            Body: jsonFile
+
+        };
+        s3.headObject(getParams, function (error, data) {
+            if (error) {
+                s3.putObject(putParams, function (err, data) {
+                    if (err) {
+                        console.log("Put params error " + err);
+                    }
+                    else {
+                        console.log("API MARVEL");
+                        callback(null,response);
+
+                    }
+                });
+            }
+            else if(data){
+                s3.getObject(getParams,function (error,data) {
+                    var fileData = data.Body.toString('utf-8');
+                    var file = JSON.parse(fileData);
+                    callback(null,file);
+                    console.log("BUCKET");
+
+                })
+            }
+
+
+        })
+</xmp></pre>
