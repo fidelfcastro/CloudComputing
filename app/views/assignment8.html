@@ -1,0 +1,37 @@
+<div align="center" ><h1><b>Assignment 8</b></h1></div>
+
+<p><h4><b>1. Modify your Marvel Lambda Application to:</b></h4></p>
+<p><h4><b>• Log in DynamoDB:</b></h4></p>
+<p><h4><b>• Id: Id of the document</b></h4></p>
+<p><h4><b>• StartTime: Time stamp when the Manager lambda started.</b></h4></p>
+<p><h4><b>• EndTime: Time stamp when the Manager lambda ended.</b></h4></p>
+<p><h4><b>• SingleQuantity: How many Single lambdas where executed.</b></h4></p>
+<p><h4><b>• Character1: Information about the first character.</b></h4></p>
+<p><h4><b>• Character2: Information about the first character.</b></h4></p>
+<p><h4><b>• MemoryReserved: How much memory was reserved for Manager lambda.</b></h4></p>
+<p><h4><b>• MemoryUsed: How much memory was used for Manager lambda</b></h4></p>
+<div class="jumbotron">
+<p><font size="5"><li><a href="#!/assignment4">Pagina de la tarea de Marvel (Assignment 4)</a> </li></font></p>
+<p><font size="5"><li><a href="https://github.com/fidelfcastro/Serverless">Codigo de mis lambdas de getComics y getSeries</a> </li></font></p>
+</div>
+<p></p>
+<p><h4><b>2. Create DynamoDB using a CloudFormation Template.</b></h4></p>
+<pre><xmp>
+    resources:
+      Resources:
+        MarvelTable:
+          Type: 'AWS::DynamoDB::Table'
+          Properties:
+            AttributeDefinitions:
+              -
+                AttributeName: id
+                AttributeType: S
+            KeySchema:
+              -
+                AttributeName: id
+                KeyType: HASH
+            ProvisionedThroughput:
+                ReadCapacityUnits: 5
+                WriteCapacityUnits: 5
+            TableName: 'Fidel-MarvelTableA8'
+</xmp></pre>
